@@ -1,7 +1,7 @@
 package openai_test
 
 import (
-	. "github.com/sashabaranov/go-openai"
+	. "github.com/aixj1984/go-openai"
 
 	"bytes"
 	"encoding/json"
