@@ -17,6 +17,7 @@ var (
 // GPT3 Models are designed for text-based tasks. For code-specific
 // tasks, please refer to the Codex series of models.
 const (
+	GPT4                    = "gpt4" // GPT4 GPT-4
 	GPT3Dot5Turbo0301       = "gpt-3.5-turbo-0301"
 	GPT3Dot5Turbo           = "gpt-3.5-turbo"
 	GPT3TextDavinci003      = "text-davinci-003"
@@ -97,7 +98,7 @@ func (c *Client) CreateCompletion(
 	ctx context.Context,
 	request CompletionRequest,
 ) (response CompletionResponse, err error) {
-	if request.Model == GPT3Dot5Turbo0301 || request.Model == GPT3Dot5Turbo {
+	if request.Model == GPT3Dot5Turbo0301 || request.Model == GPT3Dot5Turbo && request.Model != GPT4 {
 		err = ErrCompletionUnsupportedModel
 		return
 	}

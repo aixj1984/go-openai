@@ -68,7 +68,7 @@ func (c *Client) CreateChatCompletion(
 	request ChatCompletionRequest,
 ) (response ChatCompletionResponse, err error) {
 	model := request.Model
-	if model != GPT3Dot5Turbo0301 && model != GPT3Dot5Turbo {
+	if model != GPT3Dot5Turbo0301 && model != GPT3Dot5Turbo && model != GPT4 {
 		err = ErrChatCompletionInvalidModel
 		return
 	}
